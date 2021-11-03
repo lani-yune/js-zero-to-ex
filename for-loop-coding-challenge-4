@@ -1,0 +1,15 @@
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i <= bills.length - 1; i++) {
+  if (bills[i] >= 50 && bills[i] <= 300) {
+    tips[i] = 0.15 * bills[i];
+    totals[i] = tips[i] + bills[i];
+    console.log(bills[i], `Tip: ${tips[i]} 🧧, Total: ${totals[i]} 💰`);
+  } else {
+    tips[i] = 0.2 * bills[i];
+    totals[i] = tips[i] + bills[i];
+    console.log(bills[i], `Tip: ${tips[i]} 🧧, Total: ${totals[i]} 💰`);
+  }
+}
