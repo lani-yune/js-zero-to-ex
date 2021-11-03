@@ -3,6 +3,7 @@
 2. Calculate the 'tips' and 'totals' for each bill
 */
 
+// My Solution
 const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 const tips = [];
 const totals = [];
@@ -17,4 +18,22 @@ for (let i = 0; i <= bills.length - 1; i++) {
     totals[i] = tips[i] + bills[i];
     console.log(bills[i], `Tip: ${tips[i]} 🧧, Total: ${totals[i]} 💰`);
   }
+}
+
+// Alternative Solution
+function calcTip(billValue) {
+  return billValue >= 50 && billValue <= 300
+    ? 0.15 * billValue
+    : 0.2 * billValue;
+}
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i <= bills.length - 1; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
+  console.log(bills[i], `Tip: ${tips[i]} 🧧, Total: ${totals[i]} 💰`);
 }
